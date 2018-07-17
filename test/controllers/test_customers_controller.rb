@@ -20,13 +20,13 @@ class CustomersControllerTests < ControllerTestBase
     # Test whether the captured response is as we expected
     assert_not_nil(result)
     expected_body = JSON.parse(
-      '[{"customerIdentifier":"sdkautotest1","displayName":"SDK Auto Testing 1","s'\
-      'tatus":"active","createdAt":"2018-04-26T18:13:12.874Z","accounts":[{"accoun'\
-      'tIdentifier":"sdkautotest3","accountNumber":"A01335766","displayName":"SDK '\
-      'Auto Testing 3","createdAt":"2018-04-26T18:16:51.652Z","status":"ACTIVE"},{'\
-      '"accountIdentifier":"sdkautotest2","accountNumber":"A11720237","displayName'\
-      '":"SDK Auto Testing 2","createdAt":"2018-04-26T18:13:45.196Z","status":"ACT'\
-      'IVE"}]}]'
+      '[{"customerIdentifier":"sdkautotest1","displayName":"SDK Auto Testing 1","'\
+      'status":"active","createdAt":"2018-04-26T18:13:12.874Z","accounts":[{"accou'\
+      'ntIdentifier":"sdkautotest3","accountNumber":"A01335766","displayName":"SDK'\
+      ' Auto Testing 3","createdAt":"2018-04-26T18:16:51.652Z","status":"ACTIVE"},'\
+      '{"accountIdentifier":"sdkautotest2","accountNumber":"A11720237","displayNam'\
+      'e":"SDK Auto Testing 2","createdAt":"2018-04-26T18:13:45.196Z","status":"AC'\
+      'TIVE"}]}]'
       )
     received_body = JSON.parse(@response_catcher.response.raw_body)
     assert(TestHelper.match_body(expected_body, received_body, check_values: true))
@@ -46,13 +46,13 @@ class CustomersControllerTests < ControllerTestBase
     # Test whether the captured response is as we expected
     assert_not_nil(result)
     expected_body = JSON.parse(
-      '{"customerIdentifier":"sdkautotest1","displayName":"SDK Auto Testing 1","st'\
-      'atus":"active","createdAt":"2018-04-26T18:13:12.874Z","accounts":[{"account'\
-      'Identifier":"sdkautotest3","accountNumber":"A01335766","displayName":"SDK A'\
-      'uto Testing 3","createdAt":"2018-04-26T18:16:51.652Z","status":"ACTIVE"},{"'\
-      'accountIdentifier":"sdkautotest2","accountNumber":"A11720237","displayName"'\
-      ':"SDK Auto Testing 2","createdAt":"2018-04-26T18:13:45.196Z","status":"ACTI'\
-      'VE"}]}'
+      '{"customerIdentifier":"sdkautotest1","displayName":"SDK Auto Testing 1","s'\
+      'tatus":"active","createdAt":"2018-04-26T18:13:12.874Z","accounts":[{"accoun'\
+      'tIdentifier":"sdkautotest3","accountNumber":"A01335766","displayName":"SDK '\
+      'Auto Testing 3","createdAt":"2018-04-26T18:16:51.652Z","status":"ACTIVE"},{'\
+      '"accountIdentifier":"sdkautotest2","accountNumber":"A11720237","displayName'\
+      '":"SDK Auto Testing 2","createdAt":"2018-04-26T18:13:45.196Z","status":"ACT'\
+      'IVE"}]}'
       )
     received_body = JSON.parse(@response_catcher.response.raw_body)
     assert(TestHelper.match_body(expected_body, received_body, check_values: true))

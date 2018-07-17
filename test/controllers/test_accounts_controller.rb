@@ -22,11 +22,11 @@ class AccountsControllerTests < ControllerTestBase
     # Test whether the captured response is as we expected
     assert_not_nil(result)
     expected_body = JSON.parse(
-      '[{"accountIdentifier":"sdkautotest3","accountNumber":"A01335766","displayNa'\
-      'me":"SDK Auto Testing 3","createdAt":"2018-04-26T18:16:51.652Z","status":"A'\
-      'CTIVE"},{"accountIdentifier":"sdkautotest2","accountNumber":"A11720237","di'\
-      'splayName":"SDK Auto Testing 2","createdAt":"2018-04-26T18:13:45.196Z","sta'\
-      'tus":"ACTIVE"}]'
+      '[{"accountIdentifier":"sdkautotest3","accountNumber":"A01335766","displayN'\
+      'ame":"SDK Auto Testing 3","createdAt":"2018-04-26T18:16:51.652Z","status":"'\
+      'ACTIVE"},{"accountIdentifier":"sdkautotest2","accountNumber":"A11720237","d'\
+      'isplayName":"SDK Auto Testing 2","createdAt":"2018-04-26T18:13:45.196Z","st'\
+      'atus":"ACTIVE"}]'
       )
     received_body = JSON.parse(@response_catcher.response.raw_body)
     assert(TestHelper.match_body(expected_body, received_body, check_values: true))
@@ -44,10 +44,10 @@ class AccountsControllerTests < ControllerTestBase
     # Test whether the captured response is as we expected
     assert_not_nil(result)
     expected_body = JSON.parse(
-      '[{"accountIdentifier":"sdkautotest2","accountNumber":"A11720237","displayNa'\
-      'me":"SDK Auto Testing 2","currencyCode":"USD","currentBalance":0,"createdAt'\
-      '":"2018-04-26T18:13:45.196Z","status":"ACTIVE","contactEmail":"test@example'\
-      '.com"}]'
+      '[{"accountIdentifier":"sdkautotest2","accountNumber":"A11720237","displayN'\
+      'ame":"SDK Auto Testing 2","currencyCode":"USD","currentBalance":0,"createdA'\
+      't":"2018-04-26T18:13:45.196Z","status":"ACTIVE","contactEmail":"test@exampl'\
+      'e.com"}]'
       )
     received_body = JSON.parse(@response_catcher.response.raw_body)
     assert(TestHelper.match_body(expected_body, received_body, check_values: true))
@@ -67,10 +67,10 @@ class AccountsControllerTests < ControllerTestBase
     # Test whether the captured response is as we expected
     assert_not_nil(result)
     expected_body = JSON.parse(
-      '{"accountIdentifier":"sdkautotest2","accountNumber":"A11720237","displayNam'\
-      'e":"SDK Auto Testing 2","currencyCode":"USD","currentBalance":0,"createdAt"'\
-      ':"2018-04-26T18:13:45.196Z","status":"ACTIVE","contactEmail":"test@example.'\
-      'com"}'
+      '{"accountIdentifier":"sdkautotest2","accountNumber":"A11720237","displayNa'\
+      'me":"SDK Auto Testing 2","currencyCode":"USD","currentBalance":0,"createdAt'\
+      '":"2018-04-26T18:13:45.196Z","status":"ACTIVE","contactEmail":"test@example'\
+      '.com"}'
       )
     received_body = JSON.parse(@response_catcher.response.raw_body)
     assert(TestHelper.match_body(expected_body, received_body, check_values: true))

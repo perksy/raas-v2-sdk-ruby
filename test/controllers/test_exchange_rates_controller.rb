@@ -20,13 +20,13 @@ class ExchangeRatesControllerTests < ControllerTestBase
     # Test whether the captured response is as we expected
     assert_not_nil(result)
     expected_body = JSON.parse(
-      '{"disclaimer":"Exchange rates are provided here for reference. They are upd'\
-      'ated at least once a day and may have changed by time of order.","exchangeR'\
-      'ates":[{"lastModifiedDate":"2018-04-19T13:00:14.291","rewardCurrency":"EUR"'\
-      ',"baseCurrency":"NZD","baseFx":0.59120},{"lastModifiedDate":"2018-04-19T13:'\
-      '00:14.291","rewardCurrency":"USD","baseCurrency":"NZD","baseFx":0.73130},{"'\
-      'lastModifiedDate":"2018-04-19T13:00:14.230","rewardCurrency":"INR","baseCur'\
-      'rency":"AUD","baseFx":51.29066}]}'
+      '{"disclaimer":"Exchange rates are provided here for reference. They are up'\
+      'dated at least once a day and may have changed by time of order.","exchange'\
+      'Rates":[{"lastModifiedDate":"2018-04-19T13:00:14.291","rewardCurrency":"EUR'\
+      '","baseCurrency":"NZD","baseFx":0.59120},{"lastModifiedDate":"2018-04-19T13'\
+      ':00:14.291","rewardCurrency":"USD","baseCurrency":"NZD","baseFx":0.73130},{'\
+      '"lastModifiedDate":"2018-04-19T13:00:14.230","rewardCurrency":"INR","baseCu'\
+      'rrency":"AUD","baseFx":51.29066}]}'
       )
     received_body = JSON.parse(@response_catcher.response.raw_body)
     assert(TestHelper.match_body(expected_body, received_body))

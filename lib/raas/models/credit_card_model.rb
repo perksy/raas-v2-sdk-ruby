@@ -95,9 +95,9 @@ module Raas
       last_four_digits = hash['lastFourDigits']
       expiration_date = hash['expirationDate']
       status = hash['status']
-      created_date = DateTime.rfc3339(hash['createdDate']) if
+      created_date = APIHelper.rfc3339(hash['createdDate']) if
         hash['createdDate']
-      activation_date = DateTime.rfc3339(hash['activationDate']) if
+      activation_date = APIHelper.rfc3339(hash['activationDate']) if
         hash['activationDate']
       # Parameter is an array, so we need to iterate through it
       contact_information = nil

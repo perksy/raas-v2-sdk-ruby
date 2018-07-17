@@ -101,9 +101,9 @@ module Raas
       description = hash['description']
       short_description = hash['shortDescription']
       terms = hash['terms']
-      created_date = DateTime.rfc3339(hash['createdDate']) if
+      created_date = APIHelper.rfc3339(hash['createdDate']) if
         hash['createdDate']
-      last_update_date = DateTime.rfc3339(hash['lastUpdateDate']) if
+      last_update_date = APIHelper.rfc3339(hash['lastUpdateDate']) if
         hash['lastUpdateDate']
       image_urls = hash['imageUrls']
       status = hash['status']

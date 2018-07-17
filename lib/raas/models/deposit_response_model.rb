@@ -62,7 +62,7 @@ module Raas
       # Extract variables from the hash.
       amount = hash['amount']
       amount_charged = hash['amountCharged']
-      created_date = DateTime.rfc3339(hash['createdDate']) if
+      created_date = APIHelper.rfc3339(hash['createdDate']) if
         hash['createdDate']
       fee_percent = hash['feePercent']
       reference_deposit_id = hash['referenceDepositID']

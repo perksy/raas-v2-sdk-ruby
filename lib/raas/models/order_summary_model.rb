@@ -38,7 +38,7 @@ module Raas
     attr_accessor :reward_name
 
     # The sender's information
-    # @return [String]
+    # @return [NameEmailModel]
     attr_accessor :sender
 
     # The recipient's information
@@ -120,18 +120,19 @@ module Raas
       customer_identifier = hash['customerIdentifier']
       account_identifier = hash['accountIdentifier']
       account_number = hash['accountNumber']
-      amount_charged = CurrencyBreakdownModel.from_hash(hash['amountCharged']) if
-        hash['amountCharged']
+      if hash['amountCharged']
+        amount_charged = CurrencyBreakdownModel.from_hash(hash['amountCharged'])
+      end
       margin_share = CurrencyBreakdownModel.from_hash(hash['marginShare']) if
         hash['marginShare']
       utid = hash['utid']
       reward_name = hash['rewardName']
-      sender = hash['sender']
+      sender = NameEmailModel.from_hash(hash['sender']) if hash['sender']
       recipient = NameEmailModel.from_hash(hash['recipient']) if
         hash['recipient']
       send_email = hash['sendEmail']
       status = hash['status']
-      created_at = DateTime.rfc3339(hash['createdAt']) if hash['createdAt']
+      created_at = APIHelper.rfc3339(hash['createdAt']) if hash['createdAt']
       etid = hash['etid']
 
       # Create object from extracted values.

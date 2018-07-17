@@ -14,7 +14,7 @@ module Raas
 
     # The address
     # @return [String]
-    attr_accessor :address_line_1
+    attr_accessor :address_line1
 
     # The city
     # @return [String]
@@ -38,41 +38,41 @@ module Raas
 
     # An optional second address line
     # @return [String]
-    attr_accessor :address_line_2
+    attr_accessor :address_line2
 
     # A mapping from model property names to API property names.
     def self.names
       @_hash = {} if @_hash.nil?
       @_hash['first_name'] = 'firstName'
       @_hash['last_name'] = 'lastName'
-      @_hash['address_line_1'] = 'addressLine1'
+      @_hash['address_line1'] = 'addressLine1'
       @_hash['city'] = 'city'
       @_hash['state'] = 'state'
       @_hash['postal_code'] = 'postalCode'
       @_hash['country'] = 'country'
       @_hash['email_address'] = 'emailAddress'
-      @_hash['address_line_2'] = 'addressLine2'
+      @_hash['address_line2'] = 'addressLine2'
       @_hash
     end
 
     def initialize(first_name = nil,
                    last_name = nil,
-                   address_line_1 = nil,
+                   address_line1 = nil,
                    city = nil,
                    state = nil,
                    postal_code = nil,
                    country = nil,
                    email_address = nil,
-                   address_line_2 = nil)
+                   address_line2 = nil)
       @first_name = first_name
       @last_name = last_name
-      @address_line_1 = address_line_1
+      @address_line1 = address_line1
       @city = city
       @state = state
       @postal_code = postal_code
       @country = country
       @email_address = email_address
-      @address_line_2 = address_line_2
+      @address_line2 = address_line2
     end
 
     # Creates an instance of the object from a hash.
@@ -82,24 +82,24 @@ module Raas
       # Extract variables from the hash.
       first_name = hash['firstName']
       last_name = hash['lastName']
-      address_line_1 = hash['addressLine1']
+      address_line1 = hash['addressLine1']
       city = hash['city']
       state = hash['state']
       postal_code = hash['postalCode']
       country = hash['country']
       email_address = hash['emailAddress']
-      address_line_2 = hash['addressLine2']
+      address_line2 = hash['addressLine2']
 
       # Create object from extracted values.
       BillingAddressModel.new(first_name,
                               last_name,
-                              address_line_1,
+                              address_line1,
                               city,
                               state,
                               postal_code,
                               country,
                               email_address,
-                              address_line_2)
+                              address_line2)
     end
   end
 end

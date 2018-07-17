@@ -1,6 +1,7 @@
 # This file was automatically generated for Tango Card, Inc. by APIMATIC v2.0
 # ( https://apimatic.io ).
 
+require 'date'
 module Raas
   # Represents the response from a get deposit call
   class GetDepositResponseModel < BaseModel
@@ -13,7 +14,7 @@ module Raas
     attr_accessor :amount_charged
 
     # The date the deposit was made
-    # @return [String]
+    # @return [DateTime]
     attr_accessor :created_date
 
     # The fee percentage
@@ -61,7 +62,8 @@ module Raas
       # Extract variables from the hash.
       amount = hash['amount']
       amount_charged = hash['amountCharged']
-      created_date = hash['createdDate']
+      created_date = APIHelper.rfc3339(hash['createdDate']) if
+        hash['createdDate']
       fee_percent = hash['feePercent']
       reference_deposit_id = hash['referenceDepositID']
       status = hash['status']

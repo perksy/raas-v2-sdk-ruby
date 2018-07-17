@@ -79,7 +79,7 @@ module Raas
       display_name = hash['displayName']
       currency_code = hash['currencyCode'] ||= 'USD'
       current_balance = hash['currentBalance']
-      created_at = DateTime.rfc3339(hash['createdAt']) if hash['createdAt']
+      created_at = APIHelper.rfc3339(hash['createdAt']) if hash['createdAt']
       status = hash['status']
       contact_email = hash['contactEmail']
 

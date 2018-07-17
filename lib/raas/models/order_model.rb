@@ -169,15 +169,16 @@ module Raas
       customer_identifier = hash['customerIdentifier']
       account_identifier = hash['accountIdentifier']
       account_number = hash['accountNumber']
-      amount_charged = CurrencyBreakdownModel.from_hash(hash['amountCharged']) if
-        hash['amountCharged']
+      if hash['amountCharged']
+        amount_charged = CurrencyBreakdownModel.from_hash(hash['amountCharged'])
+      end
       denomination = CurrencyBreakdownModel.from_hash(hash['denomination']) if
         hash['denomination']
       utid = hash['utid']
       reward_name = hash['rewardName']
       send_email = hash['sendEmail']
       status = hash['status']
-      created_at = DateTime.rfc3339(hash['createdAt']) if hash['createdAt']
+      created_at = APIHelper.rfc3339(hash['createdAt']) if hash['createdAt']
       reward = RewardModel.from_hash(hash['reward']) if hash['reward']
       sender = NameEmailModel.from_hash(hash['sender']) if hash['sender']
       recipient = NameEmailModel.from_hash(hash['recipient']) if

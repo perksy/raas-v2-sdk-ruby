@@ -56,7 +56,7 @@ module Raas
       customer_identifier = hash['customerIdentifier']
       display_name = hash['displayName']
       status = hash['status']
-      created_at = DateTime.rfc3339(hash['createdAt']) if hash['createdAt']
+      created_at = APIHelper.rfc3339(hash['createdAt']) if hash['createdAt']
       # Parameter is an array, so we need to iterate through it
       accounts = nil
       unless hash['accounts'].nil?

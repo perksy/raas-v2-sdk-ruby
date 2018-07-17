@@ -56,7 +56,7 @@ module Raas
       account_identifier = hash['accountIdentifier']
       account_number = hash['accountNumber']
       display_name = hash['displayName']
-      created_at = DateTime.rfc3339(hash['createdAt']) if hash['createdAt']
+      created_at = APIHelper.rfc3339(hash['createdAt']) if hash['createdAt']
       status = hash['status']
 
       # Create object from extracted values.

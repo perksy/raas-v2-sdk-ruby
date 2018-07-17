@@ -22,9 +22,9 @@ class FundControllerTests < ControllerTestBase
     # Test whether the captured response is as we expected
     assert_not_nil(result)
     expected_body = JSON.parse(
-      '{"referenceDepositID":"RAD-180426-5407","amount":1.25,"amountCharged":1.29,'\
-      '"feePercent":3.5,"createdDate":"2018-04-26T18:56:28.28Z","status":"SUCCESS"'\
-      ',"accountNumber":"A32386768"}'
+      '{"referenceDepositID":"RAD-180426-5407","amount":1.25,"amountCharged":1.29'\
+      ',"feePercent":3.5,"createdDate":"2018-04-26T18:56:28.28Z","status":"SUCCESS'\
+      '","accountNumber":"A32386768"}'
       )
     received_body = JSON.parse(@response_catcher.response.raw_body)
     assert(TestHelper.match_body(expected_body, received_body, check_values: true))
@@ -34,8 +34,8 @@ class FundControllerTests < ControllerTestBase
   def test_test_add_funds()
     # Parameters for the API call
     body = DepositRequestModel.from_hash(JSON.parse(
-      '{"accountIdentifier":"sdkautotest5","amount":1.25,"creditCardToken":"56ac1a'\
-      '30-6ba2-4047-9b8c-70f97a5502c5","customerIdentifier":"sdkautotest4"}'
+      '{"accountIdentifier":"sdkautotest5","amount":1.25,"creditCardToken":"56ac1'\
+      'a30-6ba2-4047-9b8c-70f97a5502c5","customerIdentifier":"sdkautotest4"}'
       ))
 
     # Perform the API call through the SDK function
@@ -47,9 +47,9 @@ class FundControllerTests < ControllerTestBase
     # Test whether the captured response is as we expected
     assert_not_nil(result)
     expected_body = JSON.parse(
-      '{"referenceDepositID":"RAD-180426-5407","amount":1.25,"amountCharged":1.29,'\
-      '"feePercent":3.5,"createdDate":"2018-04-26T18:56:28.28Z","status":"SUCCESS"'\
-      ',"accountNumber":"A32386768"}'
+      '{"referenceDepositID":"RAD-180426-5407","amount":1.25,"amountCharged":1.29'\
+      ',"feePercent":3.5,"createdDate":"2018-04-26T18:56:28.28Z","status":"SUCCESS'\
+      '","accountNumber":"A32386768"}'
       )
     received_body = JSON.parse(@response_catcher.response.raw_body)
     assert(TestHelper.match_body(expected_body, received_body))
@@ -67,13 +67,13 @@ class FundControllerTests < ControllerTestBase
     # Test whether the captured response is as we expected
     assert_not_nil(result)
     expected_body = JSON.parse(
-      '[{"customerIdentifier":"sdkautotest4","accountIdentifier":"sdkautotest5","t'\
-      'oken":"56ac1a30-6ba2-4047-9b8c-70f97a5502c5","label":"SDK Auto Testing Card'\
-      ' 1","lastFourDigits":"4444","expirationDate":"2020-01","status":"ACTIVE","c'\
-      'reatedDate":"2018-04-26T18:52:17.575Z","activationDate":"2018-04-26T18:52:1'\
-      '7.575Z","contactInformation":[{"fullName":"Test User","emailAddress":"test@'\
-      'example.com"},{"fullName":"Test Man Two","emailAddress":"test2@example.com"'\
-      '}],"accountNumber":"A32386768"}]'
+      '[{"customerIdentifier":"sdkautotest4","accountIdentifier":"sdkautotest5","'\
+      'token":"56ac1a30-6ba2-4047-9b8c-70f97a5502c5","label":"SDK Auto Testing Car'\
+      'd 1","lastFourDigits":"4444","expirationDate":"2020-01","status":"ACTIVE","'\
+      'createdDate":"2018-04-26T18:52:17.575Z","activationDate":"2018-04-26T18:52:'\
+      '17.575Z","contactInformation":[{"fullName":"Test User","emailAddress":"test'\
+      '@example.com"},{"fullName":"Test Man Two","emailAddress":"test2@example.com'\
+      '"}],"accountNumber":"A32386768"}]'
       )
     received_body = JSON.parse(@response_catcher.response.raw_body)
     assert(TestHelper.match_body(expected_body, received_body, check_values: true))
@@ -93,13 +93,13 @@ class FundControllerTests < ControllerTestBase
     # Test whether the captured response is as we expected
     assert_not_nil(result)
     expected_body = JSON.parse(
-      '{"customerIdentifier":"sdkautotest4","accountIdentifier":"sdkautotest5","to'\
-      'ken":"56ac1a30-6ba2-4047-9b8c-70f97a5502c5","label":"SDK Auto Testing Card '\
-      '1","lastFourDigits":"4444","expirationDate":"2020-01","status":"ACTIVE","cr'\
-      'eatedDate":"2018-04-26T18:52:17.575Z","activationDate":"2018-04-26T18:52:17'\
-      '.575Z","contactInformation":[{"fullName":"Test User","emailAddress":"test@e'\
-      'xample.com"},{"fullName":"Test Man Two","emailAddress":"test2@example.com"}'\
-      '],"accountNumber":"A32386768"}'
+      '{"customerIdentifier":"sdkautotest4","accountIdentifier":"sdkautotest5","t'\
+      'oken":"56ac1a30-6ba2-4047-9b8c-70f97a5502c5","label":"SDK Auto Testing Card'\
+      ' 1","lastFourDigits":"4444","expirationDate":"2020-01","status":"ACTIVE","c'\
+      'reatedDate":"2018-04-26T18:52:17.575Z","activationDate":"2018-04-26T18:52:1'\
+      '7.575Z","contactInformation":[{"fullName":"Test User","emailAddress":"test@'\
+      'example.com"},{"fullName":"Test Man Two","emailAddress":"test2@example.com"'\
+      '}],"accountNumber":"A32386768"}'
       )
     received_body = JSON.parse(@response_catcher.response.raw_body)
     assert(TestHelper.match_body(expected_body, received_body, check_values: true))

@@ -32,7 +32,7 @@ module Raas
       return nil unless hash
 
       # Extract variables from the hash.
-      created_at = DateTime.rfc3339(hash['createdAt']) if hash['createdAt']
+      created_at = APIHelper.rfc3339(hash['createdAt']) if hash['createdAt']
       id = hash['id']
 
       # Create object from extracted values.

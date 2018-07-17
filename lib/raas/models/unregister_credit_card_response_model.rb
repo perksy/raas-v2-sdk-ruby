@@ -39,7 +39,7 @@ module Raas
       return nil unless hash
 
       # Extract variables from the hash.
-      created_date = DateTime.rfc3339(hash['createdDate']) if
+      created_date = APIHelper.rfc3339(hash['createdDate']) if
         hash['createdDate']
       message = hash['message']
       token = hash['token']

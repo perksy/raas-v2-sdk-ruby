@@ -42,7 +42,7 @@ module Raas
     # @param [Hash] The deserialized response sent by the server in the
     # response body.
     def unbox(hash)
-      @timestamp = DateTime.rfc3339(hash['timestamp']) if hash['timestamp']
+      @timestamp = APIHelper.rfc3339(hash['timestamp']) if hash['timestamp']
       @request_id = hash['requestId']
       @path = hash['path']
       @http_code = hash['httpCode']

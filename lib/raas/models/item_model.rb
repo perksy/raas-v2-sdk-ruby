@@ -108,9 +108,9 @@ module Raas
       status = hash['status']
       value_type = hash['valueType']
       reward_type = hash['rewardType']
-      created_date = DateTime.rfc3339(hash['createdDate']) if
+      created_date = APIHelper.rfc3339(hash['createdDate']) if
         hash['createdDate']
-      last_update_date = DateTime.rfc3339(hash['lastUpdateDate']) if
+      last_update_date = APIHelper.rfc3339(hash['lastUpdateDate']) if
         hash['lastUpdateDate']
       countries = hash['countries']
       min_value = hash['minValue']
