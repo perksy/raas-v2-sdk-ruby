@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
-  s.name = 'raas'
-  s.version = '2.0.0'
+  s.name = 'tangocard-raas'
+  s.version = '2.2.1'
   s.summary = 'raas'
   s.description = 'With this RESTful API you can integrate a global reward or incentive program into your app or platform. If you have any questions or if you\'d like to receive your own credentials, please contact us at devsupport@tangocard.com.'
   s.authors = ['APIMatic SDK Generator']
