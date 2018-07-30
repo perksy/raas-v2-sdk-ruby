@@ -13,7 +13,7 @@ module Raas
         faraday.request :multipart
         faraday.request :url_encoded
         faraday.ssl[:ca_file] = Certifi.where
-        Rails.application.configuration.middleware.each do |middleware|
+        Rails.application..config.middleware.each do |middleware|
           faraday.use middleware	         
         end
         faraday.adapter Faraday.default_adapter
