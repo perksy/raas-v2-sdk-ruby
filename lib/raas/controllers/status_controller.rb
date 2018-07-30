@@ -38,9 +38,10 @@ module Raas
           headers: _headers
         )
         _context = execute_request(_request, name: 'get_system_status')
-  
+      
         # Validate response against endpoint and global error codes.
         @logger.info("Validating response for get_system_status.")
+        ap _context.response
         unless _context.response.status_code.between?(200, 208)
           raise RaasGenericException.new(
             'API Error',
