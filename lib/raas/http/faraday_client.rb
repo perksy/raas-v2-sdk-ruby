@@ -13,7 +13,9 @@ module Raas
         faraday.request :multipart
         faraday.request :url_encoded
         faraday.ssl[:ca_file] = Certifi.where
-        faraday.use middleware
+        Rails.configuration.middleware.each do |middleware|
+          faraday.use middleware	         
+        end
         faraday.adapter Faraday.default_adapter
         
         faraday.options[:params_encoder] = Faraday::FlatParamsEncoder
