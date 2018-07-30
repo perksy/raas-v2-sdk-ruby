@@ -13,18 +13,13 @@ module Raas
         faraday.request :multipart
         faraday.request :url_encoded
         faraday.ssl[:ca_file] = Certifi.where
-        Rails.application..config.middleware.each do |middleware|
-          faraday.use middleware	         
-        end
-        faraday.adapter Faraday.default_adapter
-        
+        #faraday.adapter Faraday.default_adapter
         faraday.options[:params_encoder] = Faraday::FlatParamsEncoder
         faraday.options[:open_timeout] = timeout if timeout
         faraday.request :retry, max: max_retries, interval: if max_retries &&
                                                                retry_interval
                                                               retry_interval
                                                             end
-        
       end
     end
 
